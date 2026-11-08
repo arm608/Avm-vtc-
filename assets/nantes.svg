@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 220" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Silhouette de Nantes : cathédrale, château des ducs, tour LU, tour Bretagne et grue Titan">
+  <g fill="#161a24">
+    <!-- immeubles de fond -->
+    <rect x="0" y="160" width="60" height="60"/><rect x="190" y="150" width="40" height="70"/>
+    <rect x="440" y="140" width="40" height="80"/><rect x="530" y="120" width="60" height="100"/>
+    <rect x="660" y="130" width="50" height="90"/><rect x="720" y="150" width="60" height="70"/>
+    <rect x="1040" y="140" width="50" height="80"/><rect x="1100" y="160" width="100" height="60"/>
+  </g>
+  <g fill="#1d2230">
+    <!-- Cathédrale Saint-Pierre -->
+    <rect x="70" y="70" width="40" height="150"/><rect x="140" y="70" width="40" height="150"/>
+    <rect x="110" y="105" width="30" height="115"/>
+    <path d="M110 105 L125 88 L140 105 Z"/>
+    <!-- Château des ducs de Bretagne -->
+    <rect x="245" y="140" width="185" height="80"/>
+    <rect x="235" y="118" width="32" height="102"/><rect x="305" y="112" width="34" height="108"/>
+    <rect x="372" y="118" width="32" height="102"/><rect x="415" y="124" width="28" height="96"/>
+    <path d="M235 118h6v-8h6v8h8v-8h6v8h6v-6h-32z M305 112h6v-8h6v8h8v-8h6v8h8v-6h-34z M372 118h6v-8h6v8h8v-8h6v8h6v-6h-32z"/>
+    <!-- Tour LU -->
+    <rect x="490" y="70" width="34" height="150"/>
+    <path d="M486 72 Q507 30 528 72 Z"/><rect x="505" y="22" width="4" height="22"/>
+    <!-- Tour Bretagne -->
+    <rect x="600" y="18" width="52" height="202"/><rect x="624" y="0" width="4" height="18"/>
+    <!-- Bâtiments île de Nantes -->
+    <rect x="940" y="150" width="90" height="70"/>
+  </g>
+  <g fill="#232838" opacity=".9">
+    <!-- fenêtres cathédrale -->
+    <path d="M82 90h16v26H82zM152 90h16v26h-16zM82 130h16v26H82zM152 130h16v26h-16z" fill="#0f1218"/>
+    <!-- fenêtres tour Bretagne -->
+    <path d="M608 30h36v2h-36zM608 50h36v2h-36zM608 70h36v2h-36zM608 90h36v2h-36zM608 110h36v2h-36zM608 130h36v2h-36zM608 150h36v2h-36zM608 170h36v2h-36z" fill="#0f1218"/>
+  </g>
+  <!-- Grue Titan jaune -->
+  <g fill="#d4a64a">
+    <rect x="862" y="70" width="16" height="150"/>
+    <rect x="770" y="62" width="260" height="10"/>
+    <rect x="858" y="40" width="24" height="22"/>
+    <rect x="1015" y="72" width="3" height="60"/>
+    <rect x="1008" y="132" width="17" height="8"/>
+    <rect x="780" y="72" width="40" height="14"/>
+  </g>
+  <rect x="0" y="216" width="1200" height="4" fill="#d4a64a" opacity=".35"/>
+</svg>

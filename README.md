@@ -1,21 +1,32 @@
-# AVM VTC – Site vitrine & réservation
+# AVM VTC – Site du chauffeur privé à Nantes
 
-Site statique (HTML/CSS/JS, aucun serveur nécessaire) pour une activité de chauffeur VTC.
+Site statique professionnel (HTML/CSS/JS, aucun serveur ni abonnement nécessaire).
 
-## Ce que fait le site
-- **Devis immédiat** : prix calculé en direct (forfaits, trajet sur mesure au km, mise à disposition à l'heure, berline / van / premium, aller-retour).
-- **Réservation en 1 clic sur WhatsApp** : le message est pré-rempli avec trajet, date, heure, véhicule et prix.
-- **Bouton Appeler / WhatsApp fixe** en bas de l'écran sur mobile.
-- Sections : avantages de la réservation directe, services, grille de forfaits, compte entreprise & partenaires (hôtels), fidélité / parrainage, avis, FAQ.
-- Référencement local (balises meta + données structurées schema.org).
+## Pages
+| Fichier | Rôle |
+|---|---|
+| `index.html` | Accueil : devis immédiat, services, forfaits, véhicule, entreprises, fidélité, avis, zones desservies, FAQ |
+| `vtc-aeroport-nantes.html` | Page Google « VTC aéroport Nantes » |
+| `vtc-gare-nantes.html` | Page Google « VTC gare de Nantes » |
+| `mentions-legales.html` | Mentions légales (obligatoires) |
 
-## À personnaliser avant la mise en ligne
-1. **`config.js`** : téléphone, ville, n° registre VTC, lien avis Google, prix au km, forfaits, remises.
-2. **`index.html`** : bloc `application/ld+json` (téléphone, zone) et les **avis clients** (remplacer les exemples par de vrais avis).
-3. **`mentions-legales.html`** : SIRET, adresse, hébergeur.
+## Ce qui fait venir des clients et augmente le chiffre d'affaires
+- **Devis immédiat** : forfaits fixes, trajet sur mesure au km, mise à disposition à l'heure, berline / van / premium, aller-retour.
+- **Réservation WhatsApp en 1 clic** : vous recevez trajet, date, heure, véhicule, prix et prénom déjà rédigés.
+- **Boutons Appeler / WhatsApp** toujours visibles sur mobile.
+- **Référencement local Nantes** : pages dédiées aéroport et gare, données structurées Google (TaxiService + FAQ), communes desservies, `sitemap.xml`.
+- **Montée en gamme** : van, premium, offre entreprises, commission pour hôtels/conciergeries, fidélité et parrainage.
 
-## Mise en ligne gratuite
-- **GitHub Pages** : Settings → Pages → Branch `main` / root.
-- ou **Netlify** : glisser-déposer le dossier sur app.netlify.com/drop.
+## À personnaliser AVANT la mise en ligne
+1. **`config.js`** : téléphone, e-mail, n° registre VTC, lien avis Google, prix, forfaits, et **vos vrais avis clients** (`reviews`).
+2. **Photo de votre véhicule** : déposez-la sous `images/vehicule.jpg` (format paysage). Sinon une illustration s'affiche.
+3. **Nom de domaine** : remplacez `https://www.avm-vtc.fr` dans `index.html`, les 2 pages, `sitemap.xml` et `robots.txt`.
+4. **Téléphone dans les données Google** : `"telephone"` dans le bloc `ld+json` de `index.html`.
+5. **`mentions-legales.html`** : SIRET, adresse, hébergeur.
 
-Tester en local : ouvrir `index.html` dans un navigateur.
+Les pages aéroport et gare ont été générées à partir de l'en-tête et du pied de page de `index.html` : si vous modifiez le menu, modifiez-le dans les 3 fichiers.
+
+## Mise en ligne
+- **Netlify** (le plus simple) : glisser-déposer le dossier sur app.netlify.com/drop, puis brancher votre nom de domaine.
+- ou **GitHub Pages** : Settings → Pages → branche `main`.
+- Ensuite : déclarer le site dans **Google Search Console** (envoyer `sitemap.xml`) et ajouter le lien sur votre **fiche Google Business Profile**.

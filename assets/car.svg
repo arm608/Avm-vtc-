@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" role="img" aria-label="Berline">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a3040"/><stop offset="1" stop-color="#11141b"/></linearGradient></defs>
+  <ellipse cx="300" cy="222" rx="270" ry="14" fill="#000" opacity=".45"/>
+  <path d="M40 180 C40 150 60 138 100 132 L170 124 C200 96 240 74 300 70 C360 68 400 76 440 104 L470 124 C520 128 556 140 560 168 L562 190 C562 198 556 202 548 202 L520 202 A44 44 0 0 0 432 202 L172 202 A44 44 0 0 0 84 202 L52 202 C44 202 40 196 40 190 Z" fill="url(#g)" stroke="#3a4152" stroke-width="2"/>
+  <path d="M186 126 C214 100 248 84 296 82 L300 126 Z" fill="#0b0d12" stroke="#3a4152"/>
+  <path d="M312 82 C360 82 396 92 428 120 L432 126 L312 126 Z" fill="#0b0d12" stroke="#3a4152"/>
+  <path d="M60 156 L120 150" stroke="#d4a64a" stroke-width="5" stroke-linecap="round"/>
+  <path d="M530 150 L552 156" stroke="#ff6b5a" stroke-width="6" stroke-linecap="round"/>
+  <path d="M110 160 H520" stroke="#3a4152" stroke-width="1.5"/>
+  <circle cx="128" cy="202" r="34" fill="#0b0d12" stroke="#3a4152" stroke-width="4"/><circle cx="128" cy="202" r="14" fill="#9aa1b2"/>
+  <circle cx="476" cy="202" r="34" fill="#0b0d12" stroke="#3a4152" stroke-width="4"/><circle cx="476" cy="202" r="14" fill="#9aa1b2"/>
+</svg>
