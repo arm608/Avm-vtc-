@@ -2,19 +2,29 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VTC Nantes – AVM VTC, chauffeur privé 24h/24 | Aéroport, gare, prix fixe</title>
-  <meta name="description" content="AVM VTC, chauffeur privé à Nantes 24h/24 et 7j/7. Aéroport Nantes Atlantique dès 35 €, gare SNCF, La Baule, Puy du Fou. Prix fixe annoncé, devis immédiat, réservation en 1 minute.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>AVM VTC – Chauffeur VTC à Nantes 24h/24 | Réservez en 30 secondes</title>
+  <meta name="description" content="AVM VTC, votre chauffeur privé à Nantes 24h/24. Entrez votre destination, voyez votre prix et réservez en 30 secondes. Aéroport Nantes Atlantique dès 35 €, prix fixe. 07 81 75 46 77.">
   <link rel="canonical" href="https://www.avm-vtc.fr/">
-  <meta property="og:title" content="AVM VTC – Chauffeur privé à Nantes 24h/24">
-  <meta property="og:description" content="Aéroport Nantes Atlantique dès 35 €. Prix fixe, chauffeur ponctuel, réservation en 1 minute.">
+  <meta property="og:title" content="AVM VTC – Votre chauffeur à Nantes, 24h/24">
+  <meta property="og:description" content="Entrez votre destination, voyez le prix, réservez. Aéroport dès 35 €.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
+
+  <!-- Application installable -->
+  <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#0b0d12">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="AVM VTC">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
   <link rel="stylesheet" href="style.css">
 
   <script type="application/ld+json">
@@ -23,307 +33,185 @@
     "@type": "TaxiService",
     "name": "AVM VTC",
     "url": "https://www.avm-vtc.fr/",
-    "description": "Chauffeur privé VTC à Nantes 24h/24 : aéroport Nantes Atlantique, gare SNCF, transferts longue distance, mise à disposition, transport d'entreprise.",
-    "telephone": "+33600000000",
+    "description": "Chauffeur privé VTC à Nantes 24h/24 : aéroport Nantes Atlantique, gare, longues distances, entreprises.",
+    "telephone": "+33781754677",
     "areaServed": ["Nantes", "Rezé", "Saint-Herblain", "Orvault", "Carquefou", "Vertou", "Bouguenais", "Saint-Sébastien-sur-Loire", "Loire-Atlantique"],
     "priceRange": "€€",
     "provider": {
       "@type": "LocalBusiness",
       "name": "AVM VTC",
+      "telephone": "+33781754677",
       "address": { "@type": "PostalAddress", "addressLocality": "Nantes", "postalCode": "44000", "addressCountry": "FR" },
       "openingHours": "Mo-Su 00:00-23:59"
     }
   }
   </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      { "@type": "Question", "name": "Combien coûte un VTC entre Nantes et l'aéroport Nantes Atlantique ?", "acceptedAnswer": { "@type": "Answer", "text": "Le forfait entre Nantes centre et l'aéroport Nantes Atlantique est de 35 € en berline, prix fixe, quel que soit le trafic." } },
-      { "@type": "Question", "name": "Que se passe-t-il si mon vol a du retard ?", "acceptedAnswer": { "@type": "Answer", "text": "Nous suivons votre vol en temps réel. Le chauffeur s'adapte à l'heure réelle d'atterrissage et les 45 premières minutes d'attente sont offertes." } },
-      { "@type": "Question", "name": "Le prix peut-il changer pendant la course ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Le prix est fixé à la réservation. Seul un changement d'itinéraire demandé par le client peut le modifier, avec son accord." } }
-    ]
-  }
-  </script>
 </head>
-<body>
-
-  <div class="topbar">
-    <div class="container topbar__inner">
-      <span>📍 <span data-region></span> · 24h/24 · 7j/7</span>
-      <a data-tel href="#"><span data-tel-label></span></a>
-    </div>
-  </div>
+<body class="is-app">
 
   <header class="header" id="top">
     <div class="container header__inner">
       <a href="index.html" class="logo" aria-label="AVM VTC, accueil">
         <span class="logo__mark">AVM</span><span class="logo__text">VTC</span>
       </a>
-      <nav class="nav" id="nav" aria-label="Navigation principale">
+      <nav class="nav" aria-label="Navigation principale">
         <a href="vtc-aeroport-nantes.html">Aéroport</a>
         <a href="vtc-gare-nantes.html">Gare</a>
-        <a href="#destinations">Destinations</a>
-        <a href="#entreprises">Entreprises</a>
-        <a href="#faq">FAQ</a>
+        <a href="index.html#tarifs">Tarifs</a>
+        <a href="index.html#entreprises">Entreprises</a>
       </nav>
-      <a class="btn btn--gold btn--sm header__cta" href="#reserver">Réserver</a>
-      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="btn btn--ghost btn--sm" data-install hidden>⬇︎ Installer l'app</button>
+      <a class="btn btn--gold btn--sm" data-tel href="#">📞 <span class="hide-sm" data-tel-label></span><span class="show-sm">Appeler</span></a>
     </div>
   </header>
 
   <main>
-    <!-- ============ HERO + DEVIS ============ -->
-    <section class="hero">
-      <div class="container hero__grid">
-        <div class="hero__text">
-          <p class="eyebrow">Chauffeur privé à Nantes</p>
-          <h1>Votre VTC à Nantes,<br><em>à l'heure et au prix annoncé.</em></h1>
-          <p class="lead">Aéroport Nantes Atlantique, gare SNCF, rendez-vous d'affaires, côte atlantique : un chauffeur professionnel vous attend, de jour comme de nuit. Le prix est fixé à la réservation, sans majoration.</p>
-          <div class="hero__actions">
-            <a class="btn btn--gold" href="#reserver">Calculer mon prix</a>
-            <a class="btn btn--ghost" data-tel href="#">📞 <span data-tel-label></span></a>
+    <!-- =============== L'APPLI =============== -->
+    <section class="app" id="reserver">
+      <div class="app__map" id="map" aria-label="Carte du trajet"></div>
+
+      <div class="sheet">
+        <div class="sheet__grip" aria-hidden="true"></div>
+        <h1 class="sheet__title">Où allez-vous ?</h1>
+        <p class="sheet__sub">Votre chauffeur privé à Nantes · 24h/24 · prix fixe</p>
+
+        <div class="where">
+          <div class="where__rail" aria-hidden="true"><span class="dot"></span><span class="rail"></span><span class="square"></span></div>
+          <div class="where__fields">
+            <div class="ac">
+              <label class="sr-only" for="from">Départ</label>
+              <input id="from" placeholder="Adresse de départ" autocomplete="off" spellcheck="false">
+              <button type="button" class="ac__locate" id="locate" title="Utiliser ma position" aria-label="Utiliser ma position">◎</button>
+              <ul class="ac__list" role="listbox" hidden></ul>
+            </div>
+            <div class="ac">
+              <label class="sr-only" for="to">Destination</label>
+              <input id="to" placeholder="Où allez-vous ?" autocomplete="off" spellcheck="false">
+              <ul class="ac__list" role="listbox" hidden></ul>
+            </div>
           </div>
-          <ul class="badges">
-            <li><strong>35 €</strong><span>Nantes ↔ aéroport</span></li>
-            <li><strong>24h/24</strong><span>7 jours sur 7</span></li>
-            <li><strong>0 €</strong><span>de majoration</span></li>
-          </ul>
         </div>
 
-        <form class="card booking" id="reserver" novalidate>
-          <div class="booking__head">
-            <h2 class="booking__title">Devis immédiat</h2>
-            <p class="booking__sub">Prix affiché en direct · confirmation par WhatsApp</p>
-          </div>
+        <div class="chips" id="chips" aria-label="Destinations rapides"></div>
 
-          <div class="tabs" role="tablist" aria-label="Type de course">
-            <button type="button" class="tab is-active" data-mode="transfer" role="tab" aria-selected="true">Trajet</button>
-            <button type="button" class="tab" data-mode="hourly" role="tab" aria-selected="false">Mise à disposition</button>
-          </div>
+        <div class="trip" id="trip" hidden>
+          <p class="trip__info" id="tripInfo"></p>
 
-          <div class="field" data-show="transfer">
-            <label for="route">Trajet</label>
-            <select id="route" name="route"></select>
-          </div>
+          <div class="rides" id="rides" role="radiogroup" aria-label="Choix du véhicule"></div>
 
-          <div class="field-row" data-show="custom">
-            <div class="field">
-              <label for="from">Départ</label>
-              <input id="from" name="from" placeholder="Adresse de départ" autocomplete="street-address">
+          <div class="when">
+            <div class="seg" role="radiogroup" aria-label="Quand ?">
+              <button type="button" class="seg__btn is-active" data-when="now" role="radio" aria-checked="true">⚡ Dès que possible</button>
+              <button type="button" class="seg__btn" data-when="later" role="radio" aria-checked="false">📅 Planifier</button>
             </div>
-            <div class="field">
-              <label for="to">Arrivée</label>
-              <input id="to" name="to" placeholder="Adresse d'arrivée">
-            </div>
-          </div>
-          <div class="field" data-show="custom">
-            <label for="km">Distance estimée : <output id="kmOut">20</output> km</label>
-            <input type="range" id="km" name="km" min="2" max="400" value="20">
-          </div>
-
-          <div class="field" data-show="hourly">
-            <label for="hours">Durée : <output id="hoursOut">3</output> h</label>
-            <input type="range" id="hours" name="hours" min="2" max="12" value="3">
-          </div>
-
-          <div class="field">
-            <span class="label">Véhicule</span>
-            <div class="vehicles" id="vehicles"></div>
-          </div>
-
-          <div class="field-row">
-            <div class="field">
-              <label for="date">Date</label>
-              <input type="date" id="date" name="date" required>
-            </div>
-            <div class="field">
-              <label for="time">Heure</label>
-              <input type="time" id="time" name="time" required>
+            <div class="when__plan" id="plan" hidden>
+              <input type="date" id="date" aria-label="Date">
+              <input type="time" id="time" aria-label="Heure">
             </div>
           </div>
 
-          <div class="field-row">
-            <div class="field">
-              <label for="pax">Passagers</label>
-              <select id="pax" name="pax">
-                <option>1</option><option>2</option><option>3</option><option>4</option>
-                <option>5</option><option>6</option><option>7</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="name">Prénom</label>
-              <input id="name" name="name" placeholder="Votre prénom" autocomplete="given-name" required>
-            </div>
+          <div class="ac">
+            <label class="sr-only" for="name">Prénom</label>
+            <input id="name" placeholder="Votre prénom" autocomplete="given-name">
           </div>
 
-          <label class="checkbox" data-show="transfer"><input type="checkbox" id="roundtrip" name="roundtrip"> Aller-retour <span class="muted">(-5 %)</span></label>
-
-          <div class="price" aria-live="polite">
-            <div>
-              <span class="price__label">Prix TTC</span>
-              <span class="price__old" id="priceOld"></span>
-            </div>
-            <span class="price__value" id="price">—</span>
-          </div>
-          <p class="price__note" id="priceNote">-10 % appliqués : 1ʳᵉ réservation directe</p>
-
-          <button type="submit" class="btn btn--whatsapp btn--block">Réserver sur WhatsApp</button>
-          <a class="btn btn--ghost btn--block" data-tel href="#">Ou appeler le chauffeur</a>
+          <p class="trip__promo" id="promo"></p>
+          <button type="button" class="btn btn--book" id="book">Réserver</button>
           <p class="form-error" id="formError" role="alert"></p>
-        </form>
+        </div>
+
+        <a class="sheet__call" data-tel href="#">Ou appelez directement le <strong data-tel-label></strong></a>
       </div>
-      <img class="hero__skyline" src="assets/nantes.svg" alt="" aria-hidden="true">
     </section>
 
-    <!-- ============ ENGAGEMENTS ============ -->
+    <!-- =============== CONFIANCE =============== -->
     <section class="strip">
       <div class="container strip__inner">
-        <div><strong>Prix fixe</strong><span>annoncé avant le départ</span></div>
+        <div><strong>Prix fixe</strong><span>connu avant de réserver</span></div>
+        <div><strong>24h/24</strong><span>7 jours sur 7</span></div>
         <div><strong>Suivi de vol</strong><span>45 min d'attente offertes</span></div>
-        <div><strong>Carte VTC</strong><span>chauffeur pro &amp; assuré</span></div>
-        <div><strong>Annulation</strong><span>gratuite jusqu'à 2 h avant</span></div>
+        <div><strong>-10 %</strong><span>sur votre 1ʳᵉ course</span></div>
       </div>
     </section>
 
-    <!-- ============ SERVICES ============ -->
-    <section class="section" id="services">
+    <!-- =============== POURQUOI =============== -->
+    <section class="section">
       <div class="container">
-        <p class="eyebrow center">Nos services</p>
-        <h2 class="section__title">Un chauffeur pour chaque déplacement</h2>
-        <div class="grid grid--3">
-          <a class="card service" href="vtc-aeroport-nantes.html">
-            <span class="service__icon">✈️</span>
-            <h3>Aéroport Nantes Atlantique</h3>
-            <p>Accueil en zone d'arrivée avec pancarte à votre nom, aide aux bagages, suivi de vol en temps réel.</p>
-            <span class="link">Dès 35 € →</span>
-          </a>
-          <a class="card service" href="vtc-gare-nantes.html">
-            <span class="service__icon">🚆</span>
-            <h3>Gare de Nantes</h3>
-            <p>Prise en charge accès Nord ou Sud, à l'arrivée de votre TGV. Idéal avec des bagages ou des enfants.</p>
-            <span class="link">Dès 25 € →</span>
-          </a>
-          <a class="card service" href="#entreprises">
-            <span class="service__icon">💼</span>
-            <h3>Déplacements d'affaires</h3>
-            <p>Rendez-vous, Parc des Expositions de la Beaujoire, Cité des Congrès, accueil de clients VIP.</p>
-            <span class="link">Compte entreprise →</span>
-          </a>
-          <a class="card service" href="#reserver" data-prefill="hourly">
-            <span class="service__icon">⏳</span>
-            <h3>Mise à disposition</h3>
-            <p>Un chauffeur à l'heure ou à la journée : tournée de rendez-vous, shopping, visite du vignoble nantais.</p>
-            <span class="link">50 €/h →</span>
-          </a>
-          <a class="card service" href="#" data-wa="Bonjour, je souhaite un devis pour un mariage / événement.">
-            <span class="service__icon">💍</span>
-            <h3>Mariages &amp; événements</h3>
-            <p>Voiture des mariés, navettes pour vos invités entre la cérémonie, le domaine et les hôtels.</p>
-            <span class="link">Demander un devis →</span>
-          </a>
-          <a class="card service" href="#reserver" data-prefill="custom">
-            <span class="service__icon">🌙</span>
-            <h3>Soirées &amp; retours de nuit</h3>
-            <p>Concert au Zénith, match à la Beaujoire, dîner en ville : rentrez en sécurité, à toute heure.</p>
-            <span class="link">Réserver →</span>
-          </a>
+        <h2 class="section__title">Mieux qu'une appli. Votre chauffeur.</h2>
+        <div class="grid grid--3 why">
+          <div class="card"><span class="why__icon">💶</span><h3>Pas de prix qui s'envole</h3><p>Pluie, heure de pointe, match à la Beaujoire : le prix reste celui annoncé.</p></div>
+          <div class="card"><span class="why__icon">⏱️</span><h3>Toujours à l'heure</h3><p>Chauffeur sur place 10 minutes avant. Vol ou train en retard ? On attend.</p></div>
+          <div class="card"><span class="why__icon">🤝</span><h3>Un vrai service</h3><p>Eau, chargeurs, siège enfant offert, aide aux bagages. Un seul numéro à retenir.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- ============ DESTINATIONS / FORFAITS ============ -->
-    <section class="section section--alt" id="destinations">
-      <div class="container">
-        <p class="eyebrow center">Forfaits au départ de Nantes</p>
-        <h2 class="section__title">Des prix clairs, fixés à l'avance</h2>
-        <p class="section__sub">Prix TTC par véhicule, péages inclus. Berline jusqu'à 4 passagers, van jusqu'à 7.</p>
+    <!-- =============== TARIFS =============== -->
+    <section class="section section--alt" id="tarifs">
+      <div class="container container--narrow">
+        <h2 class="section__title">Nos forfaits depuis Nantes</h2>
+        <p class="section__sub">Prix TTC par véhicule, péages inclus.</p>
         <div class="table-wrap">
-          <table class="prices" id="pricesTable">
+          <table class="prices">
             <thead><tr><th>Trajet</th><th>Berline</th><th>Van</th><th><span class="sr-only">Action</span></th></tr></thead>
             <tbody></tbody>
           </table>
         </div>
-        <p class="center muted small">Autre destination ? Utilisez le <a class="link" href="#reserver" data-prefill="custom">devis sur mesure</a> : Paris, Bordeaux, Vannes, Les Sables-d'Olonne…</p>
       </div>
     </section>
 
-    <!-- ============ VÉHICULE ============ -->
-    <section class="section">
+    <!-- =============== APPLI =============== -->
+    <section class="section" id="appli">
       <div class="container split">
-        <figure class="vehicle-photo">
-          <img src="images/vehicule.jpg" alt="Véhicule AVM VTC" onerror="this.onerror=null;this.src='assets/car.svg';this.classList.add('is-fallback')">
-        </figure>
         <div>
-          <p class="eyebrow">Votre confort</p>
-          <h2 class="section__title section__title--left">Un véhicule récent, propre et climatisé</h2>
-          <ul class="checks">
-            <li>Eau fraîche, chargeurs iPhone / Android, Wi-Fi</li>
-            <li>Siège bébé et rehausseur gratuits sur demande</li>
-            <li>Grand coffre pour valises, poussettes, matériel de golf</li>
-            <li>Chauffeur en tenue, discret et courtois</li>
-            <li>Paiement CB sans contact, espèces, virement ou facture</li>
-          </ul>
+          <p class="eyebrow">Application AVM VTC</p>
+          <h2 class="section__title section__title--left">Votre chauffeur en un clic sur votre téléphone</h2>
+          <p class="muted">Installez AVM VTC sur votre écran d'accueil : gratuit, sans App Store, sans inscription.</p>
+          <button class="btn btn--gold" data-install hidden>⬇︎ Installer l'application</button>
+          <div class="howto">
+            <p><strong>iPhone :</strong> dans Safari, touchez <span class="kbd">Partager ⬆︎</span> puis <span class="kbd">Sur l'écran d'accueil</span>.</p>
+            <p><strong>Android :</strong> dans Chrome, touchez <span class="kbd">⋮</span> puis <span class="kbd">Installer l'application</span>.</p>
+          </div>
+        </div>
+        <div class="phone" aria-hidden="true">
+          <div class="phone__screen">
+            <div class="phone__map"></div>
+            <div class="phone__sheet">
+              <strong>Où allez-vous ?</strong>
+              <span class="phone__input">✈️ Aéroport Nantes Atlantique</span>
+              <span class="phone__ride"><b>🚘 Berline</b><b>32 €</b></span>
+              <span class="phone__ride"><b>🚐 Van</b><b>43 €</b></span>
+              <span class="phone__btn">Réserver</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ COMMENT ÇA MARCHE ============ -->
-    <section class="section section--alt">
-      <div class="container">
-        <p class="eyebrow center">Simple et rapide</p>
-        <h2 class="section__title">Réservez en 1 minute</h2>
-        <ol class="steps">
-          <li><span>1</span><h3>Calculez votre prix</h3><p>Choisissez votre trajet et votre véhicule : le prix s'affiche immédiatement.</p></li>
-          <li><span>2</span><h3>Envoyez la demande</h3><p>Un clic ouvre WhatsApp avec votre demande déjà rédigée. Vous pouvez aussi appeler.</p></li>
-          <li><span>3</span><h3>Recevez la confirmation</h3><p>Le chauffeur confirme en quelques minutes et vous attend à l'heure prévue.</p></li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ============ ENTREPRISES ============ -->
-    <section class="section" id="entreprises">
+    <!-- =============== ENTREPRISES =============== -->
+    <section class="section section--alt" id="entreprises">
       <div class="container split">
         <div>
-          <p class="eyebrow">Entreprises &amp; partenaires</p>
-          <h2 class="section__title section__title--left">Le chauffeur de vos collaborateurs et de vos clients</h2>
+          <p class="eyebrow">Entreprises, hôtels, conciergeries</p>
+          <h2 class="section__title section__title--left">Un chauffeur dédié pour vos clients et équipes</h2>
           <ul class="checks">
-            <li>Facture mensuelle unique, TVA récupérable</li>
+            <li>Facture mensuelle, TVA récupérable</li>
             <li>Tarifs négociés selon le volume</li>
-            <li>Réservation prioritaire, même à la dernière minute</li>
-            <li>Accueil VIP à l'aéroport et en gare</li>
-            <li>Discrétion et confidentialité</li>
+            <li>Commission reversée aux hôtels partenaires</li>
           </ul>
         </div>
         <div class="card cta-card">
-          <h3>Hôtels, conciergeries, agences</h3>
-          <p>Vous recommandez un chauffeur de confiance à vos clients ? Nous vous reversons une commission sur chaque course apportée.</p>
-          <a href="#" class="btn btn--gold btn--block" data-wa="Bonjour, je souhaite ouvrir un compte entreprise / partenaire avec AVM VTC.">Ouvrir un compte</a>
-          <a href="#" class="btn btn--ghost btn--block" data-mail="Compte entreprise AVM VTC">Écrire par e-mail</a>
+          <h3>Ouvrir un compte pro</h3>
+          <p>Réponse dans la journée.</p>
+          <a href="#" class="btn btn--gold btn--block" data-wa="Bonjour, je souhaite ouvrir un compte entreprise / partenaire avec AVM VTC.">Nous contacter</a>
         </div>
       </div>
     </section>
 
-    <!-- ============ FIDÉLITÉ ============ -->
-    <section class="section section--gold">
-      <div class="container loyalty">
-        <div>
-          <h2>La 10ᵉ course offerte*</h2>
-          <p>Et 10 € de réduction pour vous et pour chaque ami parrainé.</p>
-        </div>
-        <a href="#" class="btn btn--dark" data-wa="Bonjour, je souhaite m'inscrire au programme fidélité AVM VTC.">Je m'inscris</a>
-      </div>
-      <p class="container fineprint">* Dans la limite de 40 €, pour les courses réservées en direct.</p>
-    </section>
-
-    <!-- ============ AVIS ============ -->
+    <!-- =============== AVIS =============== -->
     <section class="section" id="avis">
       <div class="container">
-        <p class="eyebrow center">Avis clients</p>
-        <h2 class="section__title">Ils nous ont fait confiance</h2>
+        <h2 class="section__title">Avis clients</h2>
         <div class="grid grid--3" id="reviews"></div>
         <div class="card review-empty" id="reviewsEmpty" hidden>
           <p>Vous avez voyagé avec AVM VTC ? Votre avis aide d'autres Nantais à choisir un chauffeur de confiance.</p>
@@ -332,39 +220,15 @@
       </div>
     </section>
 
-    <!-- ============ ZONES ============ -->
-    <section class="section section--alt">
-      <div class="container container--narrow center">
-        <p class="eyebrow">Zones desservies</p>
-        <h2 class="section__title">Nantes, sa métropole et toute la Loire-Atlantique</h2>
-        <p class="zones">Nantes · Rezé · Saint-Herblain · Orvault · Carquefou · Vertou · Bouguenais · Saint-Sébastien-sur-Loire · La Chapelle-sur-Erdre · Sainte-Luce-sur-Loire · Couëron · Basse-Goulaine · Thouaré-sur-Loire · Sautron · Les Sorinières · Clisson · Ancenis · Saint-Nazaire · La Baule · Pornic · Pornichet · Guérande · Le Croisic · Saint-Brevin</p>
-      </div>
-    </section>
-
-    <!-- ============ FAQ ============ -->
-    <section class="section" id="faq">
+    <!-- =============== FAQ =============== -->
+    <section class="section section--alt" id="faq">
       <div class="container container--narrow">
-        <p class="eyebrow center">FAQ</p>
         <h2 class="section__title">Questions fréquentes</h2>
-        <details><summary>Combien coûte un VTC entre Nantes et l'aéroport ?</summary><p>Le forfait entre Nantes centre et l'aéroport Nantes Atlantique est de 35 € en berline, prix fixe, quel que soit le trafic sur le périphérique.</p></details>
-        <details><summary>Que se passe-t-il si mon vol ou mon train a du retard ?</summary><p>Nous suivons votre vol ou votre train en temps réel. Le chauffeur s'adapte à l'heure réelle d'arrivée et les 45 premières minutes d'attente sont offertes.</p></details>
-        <details><summary>Le prix peut-il changer pendant la course ?</summary><p>Non. Le prix est fixé à la réservation. Seul un changement d'itinéraire demandé par vous (arrêt supplémentaire, détour) peut le modifier, toujours avec votre accord.</p></details>
-        <details><summary>Combien de temps à l'avance faut-il réserver ?</summary><p>Idéalement la veille pour garantir la disponibilité, surtout pour les départs tôt le matin. Pour une course dans l'heure, appelez directement le chauffeur.</p></details>
-        <details><summary>Quels moyens de paiement acceptez-vous ?</summary><p>Carte bancaire (y compris sans contact), espèces, virement, et facture mensuelle pour les entreprises.</p></details>
-        <details><summary>Pourquoi réserver en direct plutôt que sur une application ?</summary><p>En direct, pas de prix qui grimpe aux heures de pointe ou quand il pleut, et vous savez qui viendra vous chercher. En plus, vous bénéficiez de 10 % de remise sur votre première course et du programme fidélité.</p></details>
-        <details><summary>Puis-je annuler ?</summary><p>Oui, l'annulation est gratuite jusqu'à 2 h avant la prise en charge.</p></details>
-      </div>
-    </section>
-
-    <!-- ============ CTA FINAL ============ -->
-    <section class="section final">
-      <div class="container center">
-        <h2 class="section__title">Besoin d'un chauffeur à Nantes ?</h2>
-        <p class="section__sub">Réponse rapide, de jour comme de nuit.</p>
-        <div class="final__btns">
-          <a class="btn btn--gold" data-tel href="#">📞 <span data-tel-label></span></a>
-          <a class="btn btn--whatsapp" href="#" data-wa="Bonjour, je souhaite réserver une course avec AVM VTC.">WhatsApp</a>
-        </div>
+        <details><summary>Le prix affiché est-il le prix final ?</summary><p>Oui. Le chauffeur confirme le prix avant la course et il ne change pas, même dans les bouchons. Seul un détour ou un arrêt que vous demandez peut le modifier, avec votre accord.</p></details>
+        <details><summary>Comment se passe la réservation ?</summary><p>Vous choisissez votre trajet et votre véhicule, puis « Réserver » ouvre WhatsApp avec votre demande déjà écrite. Le chauffeur vous confirme en quelques minutes. Vous pouvez aussi simplement appeler.</p></details>
+        <details><summary>Mon vol ou mon train a du retard ?</summary><p>Nous le suivons en temps réel. Les 45 premières minutes d'attente sont offertes.</p></details>
+        <details><summary>Comment payer ?</summary><p>Carte bancaire (sans contact), espèces, virement, ou facture pour les entreprises.</p></details>
+        <details><summary>Puis-je annuler ?</summary><p>Oui, gratuitement jusqu'à 2 h avant la prise en charge.</p></details>
       </div>
     </section>
   </main>
@@ -380,7 +244,7 @@
         <a href="vtc-aeroport-nantes.html">VTC aéroport Nantes</a>
         <a href="vtc-gare-nantes.html">VTC gare de Nantes</a>
         <a href="index.html#entreprises">Entreprises</a>
-        <a href="index.html#destinations">Forfaits</a>
+        <a href="index.html#tarifs">Forfaits</a>
       </div>
       <div>
         <h4>Contact</h4>
@@ -394,15 +258,11 @@
         <span class="muted small">Registre VTC n° <span data-registre></span></span>
       </div>
     </div>
-    <p class="container muted small footer__copy">© <span data-year></span> AVM VTC · Nantes</p>
+    <p class="container muted small footer__copy">© <span data-year></span> AVM VTC · Nantes · Carte © OpenStreetMap, CARTO</p>
   </footer>
 
-  <div class="mobile-bar">
-    <a class="btn btn--gold" data-tel href="#">📞 Appeler</a>
-    <a class="btn btn--whatsapp" href="#" data-wa="Bonjour, je souhaite réserver une course avec AVM VTC.">WhatsApp</a>
-  </div>
-
   <script src="config.js"></script>
+  <script src="assets/vendor/leaflet/leaflet.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

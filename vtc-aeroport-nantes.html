@@ -11,6 +11,8 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta name="theme-color" content="#0b0d12">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,29 +34,19 @@
 <body>
 
 <!-- Page générée à partir de index.html : en-tête et pied de page identiques. -->
-  <div class="topbar">
-    <div class="container topbar__inner">
-      <span>📍 <span data-region></span> · 24h/24 · 7j/7</span>
-      <a data-tel href="#"><span data-tel-label></span></a>
-    </div>
-  </div>
-
   <header class="header" id="top">
     <div class="container header__inner">
       <a href="index.html" class="logo" aria-label="AVM VTC, accueil">
         <span class="logo__mark">AVM</span><span class="logo__text">VTC</span>
       </a>
-      <nav class="nav" id="nav" aria-label="Navigation principale">
+      <nav class="nav" aria-label="Navigation principale">
         <a href="vtc-aeroport-nantes.html">Aéroport</a>
         <a href="vtc-gare-nantes.html">Gare</a>
-        <a href="index.html#destinations">Destinations</a>
+        <a href="index.html#tarifs">Tarifs</a>
         <a href="index.html#entreprises">Entreprises</a>
-        <a href="index.html#faq">FAQ</a>
       </nav>
-      <a class="btn btn--gold btn--sm header__cta" href="#reserver">Réserver</a>
-      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="btn btn--ghost btn--sm" data-install hidden>⬇︎ Installer l'app</button>
+      <a class="btn btn--gold btn--sm" data-tel href="#">📞 <span class="hide-sm" data-tel-label></span><span class="show-sm">Appeler</span></a>
     </div>
   </header>
 
@@ -134,7 +126,7 @@
         <a href="vtc-aeroport-nantes.html">VTC aéroport Nantes</a>
         <a href="vtc-gare-nantes.html">VTC gare de Nantes</a>
         <a href="index.html#entreprises">Entreprises</a>
-        <a href="index.html#destinations">Forfaits</a>
+        <a href="index.html#tarifs">Forfaits</a>
       </div>
       <div>
         <h4>Contact</h4>
@@ -148,13 +140,8 @@
         <span class="muted small">Registre VTC n° <span data-registre></span></span>
       </div>
     </div>
-    <p class="container muted small footer__copy">© <span data-year></span> AVM VTC · Nantes</p>
+    <p class="container muted small footer__copy">© <span data-year></span> AVM VTC · Nantes · Carte © OpenStreetMap, CARTO</p>
   </footer>
-
-  <div class="mobile-bar">
-    <a class="btn btn--gold" data-tel href="#">📞 Appeler</a>
-    <a class="btn btn--whatsapp" href="#" data-wa="Bonjour, je souhaite réserver une course avec AVM VTC.">WhatsApp</a>
-  </div>
 
   <div class="mobile-bar">
     <a class="btn btn--gold" data-tel href="#">📞 Appeler</a>
